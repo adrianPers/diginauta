@@ -1,0 +1,113 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+}
+
+main{
+    position: relative;
+    height:  90vh;
+    width: 480px;
+    margin: 5vh auto;
+    /* background-color: red; */
+    border-radius: 10px;
+    background-image: url('../IMG/fundo-02.jpg');
+    background-size: cover;
+    overflow: hidden;
+}
+
+.telas {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    color: white;
+    font-family: "Jersey 15", serif;
+}
+
+#nivel-atual{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: red; */
+}
+
+#nave{
+    position: absolute;
+    height: 5%;
+    /* background-color: red; */
+    bottom: 10%;
+    
+    animation: chegar 2s forwards;
+}
+
+.meteoro{
+    position: absolute;
+    height: 5%;
+    top: -5%;
+    transition: 0.5s;
+    /* background-color: aqua; */
+}
+.meteoro span{
+    position: absolute;
+    width: 100%;
+    top: -50%;
+    background-color: red;
+
+}
+
+.meteoro img{
+    position: absolute;
+    height: 100%;
+    animation:  girar 3s infinite linear;
+    
+}
+
+@keyframes girar {
+
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+
+@keyframes chegar {
+
+
+    0%{
+        bottom: -5%
+    }
+
+    100%{
+        bottom: 10%;
+    }
+    
+}
+
+@keyframes sair {
+
+    100%{
+        bottom: 100%;
+    }
+    
+}
+
+
+
+@media screen and (max-width: 480px) {
+
+    main{
+        height: 100dvh;
+        width: 100%;
+        margin: 0px;
+    }
+
+    #nivel-atual{
+        height: 80%;
+        /* background-color: red; */
+    }
+    
+}
