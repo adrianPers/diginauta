@@ -52,7 +52,7 @@ class Meteoro{
 
     atingirNave = setInterval(() =>{
         this.descer()
-    }, 200 )
+    }, 250 )
 
 
 

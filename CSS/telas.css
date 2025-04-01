@@ -44,8 +44,17 @@ main{
     animation: chegar 2s forwards;
 }
 
+#nave img{
+    height: 100%;
+}
+
 #nave::after{
-    content: "noçacnhsducsdc";
+    position: absolute;
+    background-color: red;
+    height: 1000%;
+    content: ".";
+    top: -1000%;
+    left: 50%;
 }
 
 
@@ -54,7 +63,7 @@ main{
     position: absolute;
     height: 5%;
     top: -5%;
-    transition: 0.5s;
+    transition: 1s;
     /* background-color: aqua; */
 }
 .meteoro span{
@@ -95,8 +104,14 @@ main{
 
 @keyframes sair {
 
+    0%{
+        transform: rotate(0deg);
+    }
+
     100%{
         bottom: 100%;
+        transform: rotate(0deg);
+
     }
     
 }
@@ -109,6 +124,7 @@ main{
         height: 100dvh;
         width: 100%;
         margin: 0px;
+        border-radius: 0px;
     }
 
     #nivel-atual{

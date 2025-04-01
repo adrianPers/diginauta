@@ -1,6 +1,6 @@
 
 import * as T from './telas.js'
-// import * as F from './funcoes.js'
+import * as F from './funcoes.js'
 
 const divTeclado = document.getElementById('teclado')
 const LinhasTeclado = [...divTeclado.children]
@@ -73,11 +73,10 @@ function teclar(tecla){
                 if (meteoroAtual != undefined) {
 
                     spanAtual.value = meteoroAtual.textoMeteoro
-                    console.log(spanAtual)
-                    // T.nivelAtual.nave.style.transform = `
-                    //   rotate(${(meteoroAtual.getXInicial() >= 47.5? '' : '-' )}${
-                    //         F.calcAngulo(95, meteoroAtual.getParmX())}deg)
-                    //   `
+                    T.nivelAtual.nave.style.transform = `
+                      rotate(${(meteoroAtual.getXInicial() >= 47.5? '' : '-' )}${
+                            F.calcAngulo(meteoroAtual.getParmX(), 95)}deg)
+                      `
                     spanAtual.value.innerHTML = spanAtual.value.innerHTML.substring(1, spanAtual.value.innerHTML.length)
                     spanAtual.value.style.color = 'orange'
 
@@ -96,6 +95,7 @@ function teclar(tecla){
                     if (spanAtual.value.innerHTML == '') {
 
                         setTimeout(() => {
+                            console.log(spanAtual.value)
                             spanAtual.value.nextSibling.src = 'img/explosao.gif'
                             clearInterval(meteoroAtual.descer)
                             setTimeout(() => {

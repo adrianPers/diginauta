@@ -39,13 +39,17 @@
 }
 
 .tecladas{
-    animation: pulsar 0.3s forwards;
+    animation: pulsar 0.2s forwards;
 }
 
 @keyframes pulsar{
 
     50%{
         transform: scale(1.5);
+    }
+
+    100%{
+        transform: scale(1);
     }
     
 }

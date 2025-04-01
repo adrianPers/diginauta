@@ -54,7 +54,13 @@ let arrayMeteoros = []
 const teclado = document.getElementById('teclado')
 
 
-// const TELA_MENU = document.getElementById('tela-menu')
+function gerarMeteoros(){
+
+    let meteoroAtual = new Meteoro
+    arrayMeteoros.push(meteoroAtual)
+    nivelAtual.boxNivel.appendChild(meteoroAtual.divMeteoro)
+
+}
 
 let nivelAtual
 
@@ -71,9 +77,18 @@ btnsNiveis.map((el, indece) => {
             teclado.style.bottom = '0%'
             nivelAtual = new Nivel(urlImgNave)
             main.appendChild(nivelAtual.boxNivel)
-            let meteoroAtual = new Meteoro
-            arrayMeteoros.push(meteoroAtual)
-            nivelAtual.boxNivel.appendChild(meteoroAtual.divMeteoro)
+
+            let chuvaDeMeteoros = setInterval(() => {
+
+                gerarMeteoros()
+                if(arrayMeteoros.length >= 5){
+                    clearInterval(chuvaDeMeteoros)
+                }
+
+            }, 2000)
+
+              
+                
             // setTimeout(() => {
                 
             //     nivelAtual.nave.style.animation = 'sair 1s  linear forwards'
