@@ -44,6 +44,12 @@ main{
     animation: chegar 2s forwards;
 }
 
+#nave::after{
+    content: "noçacnhsducsdc";
+}
+
+
+
 .meteoro{
     position: absolute;
     height: 5%;
@@ -106,7 +112,7 @@ main{
     }
 
     #nivel-atual{
-        height: 80%;
+        height: 75%;
         /* background-color: red; */
     }
     

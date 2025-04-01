@@ -10,13 +10,11 @@ function numeroAleatorioM5(min, max) {
     return num = num + (5 - (num % 5))
 }
 
-function defParmDist(num) {
-    if (num >= 47.5) {
-        return (num - 47.5) / 17
-    } else {
-        return (47.5 - num) / 17
-    }
+function calcAngulo(c1, c2) {
+    let hip = (((c1 ** 2) + (c2 ** 2)) ** 0.5)
+    return Math.asin(c1 / hip) * (180 / Math.PI)
 }
 
 
-export {numeroAleatorio, numeroAleatorioM5, defParmDist}
+
+export {numeroAleatorio, numeroAleatorioM5, calcAngulo}

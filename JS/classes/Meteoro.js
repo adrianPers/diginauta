@@ -12,7 +12,7 @@ class Meteoro{
         this.imgMeteoro.setAttribute('src', './IMG/meteoro.png') 
 
         this.textoMeteoro = document.createElement('span')
-        this.textoMeteoro.innerHTML = 'TEXTO'
+        this.textoMeteoro.innerHTML = 'texto'
 
         this.divMeteoro.append(this.textoMeteoro)
         this.divMeteoro.append(this.imgMeteoro)
@@ -38,9 +38,16 @@ class Meteoro{
             clearInterval(this.atingirNave)
         }
 
-        console.log(this.i)
         this.i++
 
+    }
+
+    getParmX(){
+        return this.parmDistX*18
+    }
+
+    getXInicial(){
+        return this.posicaoInicaiX
     }
 
     atingirNave = setInterval(() =>{

@@ -51,7 +51,12 @@ naves.map((el, indice) => {
 
 const btnsNiveis = [...document.getElementsByClassName('niveis')]
 let arrayMeteoros = []
+const teclado = document.getElementById('teclado')
+
+
 // const TELA_MENU = document.getElementById('tela-menu')
+
+let nivelAtual
 
 btnsNiveis.map((el, indece) => {
 
@@ -63,9 +68,11 @@ btnsNiveis.map((el, indece) => {
 
         // statusDoJogo = 2
             telaMenu.style.left = '-100%'
-            let nivelAtual = new Nivel(urlImgNave)
+            teclado.style.bottom = '0%'
+            nivelAtual = new Nivel(urlImgNave)
             main.appendChild(nivelAtual.boxNivel)
             let meteoroAtual = new Meteoro
+            arrayMeteoros.push(meteoroAtual)
             nivelAtual.boxNivel.appendChild(meteoroAtual.divMeteoro)
             // setTimeout(() => {
                 
@@ -77,4 +84,6 @@ btnsNiveis.map((el, indece) => {
 
     })
 })
+
+export {arrayMeteoros, nivelAtual}
 
