@@ -73,10 +73,11 @@ function teclar(tecla){
                 if (meteoroAtual != undefined) {
 
                     spanAtual.value = meteoroAtual.textoMeteoro
-                    T.nivelAtual.nave.style.transform = `
+                    T.nave.boxNave.style.transform = `
                       rotate(${(meteoroAtual.getXInicial() >= 47.5? '' : '-' )}${
                             F.calcAngulo(meteoroAtual.getParmX(), 95)}deg)
                       `
+                      T.nave.atirar(T.nivelAtual.boxNivel, meteoroAtual.getIndice(), meteoroAtual.getXInicial(), meteoroAtual.getParmX()/18)
                     spanAtual.value.innerHTML = spanAtual.value.innerHTML.substring(1, spanAtual.value.innerHTML.length)
                     spanAtual.value.style.color = 'orange'
 
@@ -89,6 +90,7 @@ function teclar(tecla){
                     if (spanAtual.value.innerHTML.substring(0, 1) == tecla) {
 
                         spanAtual.value.innerHTML = spanAtual.value.innerHTML.substring(1, spanAtual.value.innerHTML.length)
+                        T.nave.atirar(T.nivelAtual.boxNivel, meteoroAtual.getIndice(), meteoroAtual.getXInicial(), meteoroAtual.getParmX()/18)
 
                     }
 

@@ -24,7 +24,8 @@ class Meteoro{
         this.parmDistX = (this.posicaoX  > 47.5 ? this.posicaoX - 47.5 : 47.5 - this.posicaoX)/18
         
     }
-    i = 1
+
+    i = 18
 
     descer(){
 
@@ -38,7 +39,7 @@ class Meteoro{
             clearInterval(this.atingirNave)
         }
 
-        this.i++
+        this.i--
 
     }
 
@@ -48,6 +49,10 @@ class Meteoro{
 
     getXInicial(){
         return this.posicaoInicaiX
+    }
+
+    getIndice(){
+        return this.i
     }
 
     atingirNave = setInterval(() =>{

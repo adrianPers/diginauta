@@ -2,6 +2,7 @@
 import * as vars from './vars.js'
 import Nivel from './classes/Nivel.js'
 import Meteoro from './classes/Meteoro.js'
+import Nave from './classes/Nave.js'
 
 // Tela inicial
 const main = document.querySelector('main')
@@ -63,6 +64,7 @@ function gerarMeteoros(){
 }
 
 let nivelAtual
+let nave
 
 btnsNiveis.map((el, indece) => {
 
@@ -75,7 +77,9 @@ btnsNiveis.map((el, indece) => {
         // statusDoJogo = 2
             telaMenu.style.left = '-100%'
             teclado.style.bottom = '0%'
-            nivelAtual = new Nivel(urlImgNave)
+            nivelAtual = new Nivel()
+            nave = new Nave(urlImgNave)
+            nivelAtual.boxNivel.appendChild(nave.boxNave)
             main.appendChild(nivelAtual.boxNivel)
 
             let chuvaDeMeteoros = setInterval(() => {
@@ -100,5 +104,5 @@ btnsNiveis.map((el, indece) => {
     })
 })
 
-export {arrayMeteoros, nivelAtual}
+export {arrayMeteoros, nivelAtual, nave}
 

@@ -13,7 +13,6 @@ main{
     height:  90vh;
     width: 480px;
     margin: 5vh auto;
-    /* background-color: red; */
     border-radius: 10px;
     background-image: url('../IMG/fundo-02.jpg');
     background-size: cover;
@@ -48,15 +47,21 @@ main{
     height: 100%;
 }
 
-#nave::after{
+/* #nave::after{
     position: absolute;
     background-color: red;
     height: 1000%;
     content: ".";
     top: -1000%;
     left: 50%;
-}
+} */
 
+
+.disparo{
+    height: 5%;
+    position: absolute;
+    bottom: 10%;
+}
 
 
 .meteoro{
